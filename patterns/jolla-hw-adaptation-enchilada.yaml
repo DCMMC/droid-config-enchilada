@@ -16,6 +16,14 @@ Requires:
 - droid-config-enchilada-bluez5
 - droid-hal-version-enchilada
 
+# Enchilada extras!
+
+- triambienced
+- onyx-triambience-settings-plugin
+- gestured
+- onyx-gesture-settings-plugin
+- nemo-qml-plugin-systemsettings
+
 # fix audioflinger
 - audioflingerglue
 - pulseaudio-modules-droid-glue
@@ -90,7 +98,6 @@ Requires:
 
 # For Bluetooth
 - bluebinder
-
 
 # For FM radio on some QCOM devices
 #- qt5-qtmultimedia-plugin-mediaservice-irisradio
