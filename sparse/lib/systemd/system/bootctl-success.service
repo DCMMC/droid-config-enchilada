@@ -1,0 +1,13 @@
+[Unit]
+Description=Mark the current boot as successful on treble devices
+After=start-user-session.service
+
+[Service]
+Type=simple
+ExecStart=/usr/libexec/droid-hybris/system/bin/bootctl mark-boot-successful
+RemainAfterExit=yes
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=graphical.target actdead.target
