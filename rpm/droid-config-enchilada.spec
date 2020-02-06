@@ -1,11 +1,11 @@
 # These and other macros are documented in ../droid-configs-device/droid-configs.inc
 # Feel free to cleanup this file by removing comments, once you have memorised them ;)
 
-%define device enchilada
+%define device fajita
 %define vendor oneplus
 
 %define vendor_pretty OnePlus
-%define device_pretty OnePlus 6
+%define device_pretty OnePlus 6T
 
 # Community HW adaptations need this
 %define community_adaptation 1
