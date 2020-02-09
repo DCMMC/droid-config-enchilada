@@ -1,10 +1,10 @@
 # Feel free to disable non-critical HA parts during devel by commenting lines out
 # Generated in hadk by executing: rpm/dhd/helpers/add_new_device.sh
 
-Description: Pattern with packages for enchilada configurations
-Name: jolla-configuration-enchilada
+Description: Pattern with packages for fajita configurations
+Name: jolla-configuration-fajita
 Requires:
-- pattern:jolla-hw-adaptation-enchilada
+- pattern:jolla-hw-adaptation-fajita
 
 - patterns-sailfish-applications
 - patterns-sailfish-ui
@@ -37,5 +37,5 @@ Requires:
 # to improve camera startup times and the like
 - mapplauncherd-booster-silica-qt5-media
 
-Summary: Jolla Configuration enchilada
+Summary: Jolla Configuration fajita
 

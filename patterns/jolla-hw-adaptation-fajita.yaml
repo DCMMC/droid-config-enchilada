@@ -1,22 +1,22 @@
 # Feel free to disable non-critical HA parts during devel by commenting lines out
 # Generated in hadk by executing: rpm/dhd/helpers/add_new_device.sh
 
-Description: Pattern with packages for enchilada HW Adaptation
-Name: jolla-hw-adaptation-enchilada
+Description: Pattern with packages for fajita HW Adaptation
+Name: jolla-hw-adaptation-fajita
 Requires:
-- droid-hal-enchilada
-- droid-hal-enchilada-detritus
-- droid-hal-enchilada-img-boot
-- droid-hal-enchilada-kernel-modules
-- droid-config-enchilada-sailfish
-- droid-config-enchilada-pulseaudio-settings
-- droid-config-enchilada-policy-settings
-- droid-config-enchilada-preinit-plugin
-- droid-config-enchilada-flashing
-- droid-config-enchilada-bluez5
-- droid-hal-version-enchilada
+- droid-hal-fajita
+- droid-hal-fajita-detritus
+- droid-hal-fajita-img-boot
+- droid-hal-fajita-kernel-modules
+- droid-config-fajita-sailfish
+- droid-config-fajita-pulseaudio-settings
+- droid-config-fajita-policy-settings
+- droid-config-fajita-preinit-plugin
+- droid-config-fajita-flashing
+- droid-config-fajita-bluez5
+- droid-hal-version-fajita
 
-# Enchilada extras!
+# fajita extras!
 
 - triambienced
 - onyx-triambience-settings-plugin
@@ -107,5 +107,5 @@ Requires:
 - nfcd-binder-plugin
 - jolla-settings-system-nfc
 
-Summary: Jolla HW Adaptation enchilada
+Summary: Jolla HW Adaptation fajita
 
