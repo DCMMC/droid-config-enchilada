@@ -17,12 +17,15 @@ Requires:
 - droid-hal-version-enchilada
 
 # Enchilada extras!
-
 - triambienced
 - onyx-triambience-settings-plugin
 - gestured
 - onyx-gesture-settings-plugin
 - nemo-qml-plugin-systemsettings
+
+# FP daemon
+- droid-biometry-fp
+- sailfish-fpd-community
 
 # fix audioflinger
 - audioflingerglue
@@ -90,8 +93,8 @@ Requires:
 # hammerhead, grouper, and maguro use this in scripts, so include for all
 - rfkill
 
-# enable device lock and allow to select untrusted software
-- jolla-devicelock-daemon-encsfa
+# enable device lock (and FP)
+- sailfish-devicelock-fpd
 
 # For GPS
 - geoclue-provider-hybris
