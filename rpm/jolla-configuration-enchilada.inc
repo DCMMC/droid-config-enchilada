@@ -1,12 +1,15 @@
 Requires: patterns-sailfish-applications
 Requires: patterns-sailfish-ui
+# For devices with cellular modem. Those without one, please comment out:
 Requires: patterns-sailfish-cellular-apps
-Requires: sailfish-content-graphics-z1.75
 
-# Extended settings functionality
-Requires: jolla-settings-system-nfc
-Requires: jolla-settings-system-flashlight
+Requires: sailfish-content-graphics-z1.5
+
+# For multi-SIM devices
 Requires: jolla-settings-networking-multisim
+
+# Introduced starting Sailfish OS 2.0.4.x:
+# 3rd party accounts like Twitter, VK, cloud services, etc
 Requires: jolla-settings-accounts-extensions-3rd-party-all
 
 # Introduced starting Sailfish OS 2.1.1.26
@@ -24,12 +27,6 @@ Requires: csd
 # to improve camera startup times and the like
 Requires: mapplauncherd-booster-silica-qt5-media
 
-# Enable device lock and allow to select untrusted software
-Requires: jolla-devicelock-daemon-encsfa
-
-# Enable /home encryption
-#Requires: sailfish-device-encryption
-
 # SELinux
 #Requires: libselinux-utils
 #Requires: libselinux-utils-extra
@@ -38,15 +35,13 @@ Requires: jolla-devicelock-daemon-encsfa
 
 # Early stages of porting benefit from these:
 # On the basis of sailfish-porter-tools
-#Requires: jolla-developer-mode
-#Requires: sailfishsilica-qt5-demos
-#Requires: busybox-static
-#Requires: net-tools
-#Requires: openssh-clients
-#Requires: openssh-server
-#Requires: vim-enhanced
-#Requires: zypper
-#Requires: strace
-#Requires: jolla-rnd-device
-#Requires: libhybris-tests
+Requires: jolla-developer-mode
+Requires: sailfishsilica-qt5-demos
+Requires: busybox-static
+Requires: net-tools
+Requires: openssh-clients
+Requires: openssh-server
+Requires: vim-enhanced
+Requires: zypper
+Requires: jolla-rnd-device
 # End sailfish-porter-tools
