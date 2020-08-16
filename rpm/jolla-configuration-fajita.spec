@@ -1,5 +1,5 @@
 %define vendor oneplus
-%define device enchilada
+%define device fajita
 
 Name: jolla-configuration-%{device}
 Summary: Jolla Configuration %{device}
