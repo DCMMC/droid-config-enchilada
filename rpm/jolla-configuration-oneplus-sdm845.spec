@@ -1,21 +1,53 @@
-Requires: droid-hal-enchilada
-Requires: droid-hal-enchilada-detritus
-Requires: droid-hal-enchilada-img-boot
-Requires: droid-hal-enchilada-kernel-modules
-Requires: droid-config-enchilada-sailfish
-Requires: droid-config-enchilada-pulseaudio-settings
-Requires: droid-config-enchilada-policy-settings
-Requires: droid-config-enchilada-preinit-plugin
-Requires: droid-config-enchilada-flashing
-Requires: droid-config-enchilada-bluez5
-Requires: droid-hal-version-enchilada
+%define device oneplus-sdm845
 
-# Enchilada extras!
-Requires: triambienced
-Requires: onyx-triambience-settings-plugin
-Requires: gestured
-Requires: onyx-gesture-settings-plugin
-Requires: nemo-qml-plugin-systemsettings
+Name: jolla-configuration-oneplus-sdm845
+Summary: Jolla Configuration OnePlus SDM845 Generic
+Version: 1.0.0
+Release: 0
+License: BSD-3-Clause
+Source: %{name}-%{version}.tar.gz
+
+Requires: patterns-sailfish-applications
+Requires: patterns-sailfish-ui
+# For devices with cellular modem. Those without one, please comment out:
+Requires: patterns-sailfish-cellular-apps
+
+Requires: sailfish-content-graphics-z1.5
+
+# For multi-SIM devices
+Requires: jolla-settings-networking-multisim
+
+# Introduced starting Sailfish OS 2.0.4.x:
+# 3rd party accounts like Twitter, VK, cloud services, etc
+Requires: jolla-settings-accounts-extensions-3rd-party-all
+
+# Introduced starting Sailfish OS 2.1.1.26
+# Required for Jolla Store Access
+Requires: patterns-sailfish-consumer-generic
+
+# For Mozilla location services (online)
+Requires: geoclue-provider-mlsdb
+
+# Sailfish OS CSD tool for hardware testing
+# needs some configuration to get all features working
+Requires: csd
+
+# Devices with 2G or more memory should also include this booster
+# to improve camera startup times and the like
+Requires: mapplauncherd-booster-silica-qt5-media
+
+# Early stages of porting benefit from these:
+# On the basis of sailfish-porter-tools
+Requires: jolla-developer-mode
+Requires: sailfishsilica-qt5-demos
+Requires: busybox-static
+Requires: net-tools
+Requires: openssh-clients
+Requires: openssh-server
+Requires: vim-enhanced
+Requires: zypper
+Requires: jolla-rnd-device
+# End sailfish-porter-tools
 
 # FP daemon
 Requires: droid-biometry-fp
@@ -102,3 +134,16 @@ Requires: bluebinder
 # NFC for devices using Android 8 or newer as base
 Requires: nfcd-binder-plugin
 Requires: jolla-settings-system-nfc
+
+# OnePlus stuff
+Requires: triambienced
+Requires: onyx-triambience-settings-plugin
+Requires: gestured
+Requires: onyx-gesture-settings-plugin
+Requires: nemo-qml-plugin-systemsettings
+
+
+
+%description
+Meta-package to install packages for %{device} HW adaptation configurations
+%files

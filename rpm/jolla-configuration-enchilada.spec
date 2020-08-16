@@ -1,5 +1,5 @@
-# Device variables including vendor & device (model)
-%include rpm/header-enchilada.inc
+%define vendor oneplus
+%define device enchilada
 
 Name: jolla-configuration-%{device}
 Summary: Jolla Configuration %{device}
@@ -8,11 +8,21 @@ Release: 0
 License: BSD-3-Clause
 Source: %{name}-%{version}.tar.gz
 
-# Packages required for the device HW adaptation
-%include rpm/jolla-hw-adaptation-enchilada.inc
+Requires: droid-hal-enchilada
+Requires: droid-hal-enchilada-detritus
+Requires: droid-hal-enchilada-img-boot
+Requires: droid-hal-enchilada-kernel-modules
+Requires: droid-config-enchilada-sailfish
+Requires: droid-config-enchilada-pulseaudio-settings
+Requires: droid-config-enchilada-policy-settings
+Requires: droid-config-enchilada-preinit-plugin
+Requires: droid-config-enchilada-flashing
+Requires: droid-config-enchilada-bluez5
+Requires: droid-hal-version-enchilada
 
-# General Jolla & Sailfish OS configuration packages
-%include rpm/jolla-configuration-enchilada.inc
+# We also depend on the oneplus sdm845 common metapackage
+# It contains packages used by the 6 and 6T
+Requires: jolla-configuration-oneplus-sdm845
 
 %description
 Meta-package to install packages for %{device} HW adaptation configurations
