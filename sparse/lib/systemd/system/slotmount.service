@@ -1,0 +1,10 @@
+[Unit]
+Description=Create symlinks for partition on the current slot
+Before=system-etc-ld.config.28.txt.mount
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/slotmount.sh
+
+[Install]
+WantedBy=local-fs.target
