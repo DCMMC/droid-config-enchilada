@@ -34,7 +34,12 @@ done
 
 function domount() {
     echo "Mounting $WHAT on $WHERE ($TYPE with $OPTIONS)"
-    mount $WHAT $WHERE -t $TYPE -o $OPTIONS
+    [[ ! -f $WHERE ]] && [[ ! -d $WHERE ]] && mkdir -p $WHERE
+    if [ ! -z $OPTIONS ]; then
+        mount $WHAT $WHERE -t $TYPE -o $OPTIONS
+    else
+        mount $WHAT $WHERE -t $TYPE
+    fi
     [[ $? -ne 0 ]] && echo "ERROR: Failed to mount $WHAT on $WHERE ($TYPE with $OPTIONS)."
 }
 
@@ -75,11 +80,6 @@ WHERE=/sys/fs/bpf
 TYPE=bpf
 OPTIONS=nodev,noexec,nosuid
 domount
-WHAT=/system_root/system
-WHERE=/system
-TYPE=none
-OPTIONS=bind
-domount
 WHAT=/dev/block/bootdevice/by-name/bluetooth
 WHERE=/vendor/bt_firmware
 TYPE=vfat
@@ -105,3 +105,7 @@ WHERE=/vendor/lib64/hw/power.qcom.so
 TYPE=none
 OPTIONS=bind
 domount
+
+
+sleep 2
+exit 0

@@ -1,6 +1,6 @@
 [Unit]
 Description=Create symlinks for partition on the current slot
-Before=system-etc-ld.config.28.txt.mount
+Before=local-fs.target system-etc-ld.config.28.txt.mount systemd-modules-load.service
 
 [Service]
 Type=oneshot
