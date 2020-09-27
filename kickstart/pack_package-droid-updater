@@ -25,7 +25,7 @@ echo "[hybris-installer] Estimated rootfs size when installed: ${IMAGE_SIZE}M"
 
 # Output filenames
 DST_IMG=sfos-rootfs.tar.bz2
-DST_PKG=$ID-$VERSION_ID-$DATE-$DEVICE$EXTRA_NAME # sailfishos-3.2.0.12-20191101-$DEVICE
+DST_PKG=$ID-$VERSION_ID-$DATE-$DEVICE$EXTRA_NAME-SLOT_a # sailfishos-3.2.0.12-20191101-$DEVICE
 
 # Clone hybris-installer if not preset (e.g. porters-ci build env)
 if [ ! -d ../hybris/hybris-installer/ ]; then
