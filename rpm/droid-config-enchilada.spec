@@ -26,6 +26,8 @@ Provides: usb-moded-configs
 Obsoletes: usb-moded-defaults
 
 %include droid-configs-device/droid-configs.inc
+%include patterns/patterns-sailfish-device-adaptation-enchilada.inc
+%include patterns/patterns-sailfish-device-configuration-enchilada.inc
 
 # IMPORTANT if you want to comment out any macros in your .spec, delete the %
 # sign, otherwise they will remain defined! E.g.:
