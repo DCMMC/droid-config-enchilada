@@ -21,10 +21,15 @@ Requires: libhybris-libwayland-egl
 # Requires: onyx-triambience-settings-plugin
 # Requires: gestured
 # Requires: onyx-gesture-settings-plugin
-Requires: nemo-qml-plugin-systemsettings
+# Requires: nemo-qml-plugin-systemsettings
 
 # Sensors
 Requires: hybris-libsensorfw-qt5
+
+# FP
+Requires: droid-biometry-fp
+Requires: droid-fake-crypt
+Requires: sailfish-fpd-community
 
 # Vibra
 Requires: ngfd-plugin-native-vibrator
@@ -49,12 +54,21 @@ Requires: qt5-qtwayland-wayland_egl
 Requires: qt5-qpa-hwcomposer-plugin
 Requires: qtscenegraph-adaptation
 
-# For hybris devices with droidmedia, see HADK pdf for more information
+# Add GStreamer v1.0 as standard
+Requires: gstreamer1.0
+Requires: gstreamer1.0-plugins-good
+Requires: gstreamer1.0-plugins-base
+Requires: gstreamer1.0-plugins-bad
+Requires: nemo-gstreamer1.0-interfaces
+# For devices with droidmedia and gst-droid built, see HADK pdf for more information
 Requires: gstreamer1.0-droid
-Requires: gmp-droid
+Requires: gstreamer1.0-libav
 
 # This is needed for notification LEDs
 Requires: mce-plugin-libhybris
+
+# Flashlight
+Requires: jolla-settings-system-flashlight
 
 # USB mode controller
 Requires: usb-moded
@@ -72,15 +86,27 @@ Requires: jolla-devicelock-daemon-encsfa
 Requires: geoclue-provider-hybris
 
 # For FM radio on some QCOM devices
-#Requires: qt5-qtmultimedia-plugin-mediaservice-irisradio
-#Requires: jolla-mediaplayer-radio
+Requires: qt5-qtmultimedia-plugin-mediaservice-irisradio
+Requires: jolla-mediaplayer-radio
 
-# NFC support
-# 1. binder plugin requires Android 8 or a newer base
-# 2. pn54x plugin talks directly to pn54x driver
-# These plugins are mutually exclusive, you need to pick one:
+# NFC for devices using Android 8 or newer as base
 Requires: nfcd-binder-plugin
-#Requires: nfcd-pn54x-plugin
+Requires: jolla-settings-system-nfc
+
+# Telephony
+Requires: ofono-ril-binder-plugin
+
+# Required for mobile data
+Requires: dummy_netd
+
+# Bluetooth
+Requires: bluebinder
+
+# Camera resolutions
+Requires: camera-settings-plugin
+
+# Browser video acceleration
+Requires: gmp-droid
 
 %description -n patterns-sailfish-device-adaptation-enchilada
 Pattern with packages for enchilada HW Adaptation

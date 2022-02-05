@@ -24,6 +24,8 @@ Obsoletes: ofono-configs-mer
 # Fix for MTP using sparse usb-moded config
 Provides: usb-moded-configs
 Obsoletes: usb-moded-defaults
+%define ofono_enable_plugins bluez5,hfp_ag_bluez5
+%define ofono_disable_plugins bluez4,dun_gw_bluez4,hfp_ag_bluez4,hfp_bluez4
 
 %include droid-configs-device/droid-configs.inc
 %include patterns/patterns-sailfish-device-adaptation-enchilada.inc
@@ -32,4 +34,3 @@ Obsoletes: usb-moded-defaults
 # IMPORTANT if you want to comment out any macros in your .spec, delete the %
 # sign, otherwise they will remain defined! E.g.:
 #define some_macro "I'll not be defined because I don't have % in front"
-
