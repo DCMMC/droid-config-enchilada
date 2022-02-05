@@ -17,10 +17,10 @@ Requires: libhybris-libGLESv2
 Requires: libhybris-libwayland-egl
 
 # Enchilada extras!
-Requires: triambienced
-Requires: onyx-triambience-settings-plugin
-Requires: gestured
-Requires: onyx-gesture-settings-plugin
+# Requires: triambienced
+# Requires: onyx-triambience-settings-plugin
+# Requires: gestured
+# Requires: onyx-gesture-settings-plugin
 Requires: nemo-qml-plugin-systemsettings
 
 # Sensors

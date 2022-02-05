@@ -136,10 +136,10 @@ Requires: nfcd-binder-plugin
 Requires: jolla-settings-system-nfc
 
 # OnePlus stuff
-Requires: triambienced
-Requires: onyx-triambience-settings-plugin
-Requires: gestured
-Requires: onyx-gesture-settings-plugin
+# Requires: triambienced
+# Requires: onyx-triambience-settings-plugin
+# Requires: gestured
+# Requires: onyx-gesture-settings-plugin
 Requires: nemo-qml-plugin-systemsettings
 
 
