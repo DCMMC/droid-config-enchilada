@@ -27,9 +27,9 @@ Requires: libhybris-libwayland-egl
 Requires: hybris-libsensorfw-qt5
 
 # FP
-Requires: droid-biometry-fp
-Requires: droid-fake-crypt
-Requires: sailfish-fpd-community
+# Requires: droid-biometry-fp
+# Requires: droid-fake-crypt
+# Requires: sailfish-fpd-community
 
 # Vibra
 Requires: ngfd-plugin-native-vibrator
@@ -40,7 +40,7 @@ Requires: qt5-plugin-generic-evdev
 
 Requires: pulseaudio-modules-droid
 Requires: pulseaudio-modules-droid-hidl
-
+Requires: audiosystem-passthrough
 # The -dummy-af is needed for newer devices that run the main
 # audiosystem-passthrough in qti mode (e.g. >=Android 9 Qualcomm),
 # to fix non-responding Camera app and/or voice during a phone call:
@@ -101,9 +101,6 @@ Requires: dummy_netd
 
 # Bluetooth
 Requires: bluebinder
-
-# Camera resolutions
-Requires: camera-settings-plugin
 
 # Browser video acceleration
 Requires: gmp-droid
