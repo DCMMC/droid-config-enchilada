@@ -1,3 +1,6 @@
+# Feel free to disable non-critical HA parts during devel by commenting lines out
+# Generated in hadk by executing: rpm/dhd/helpers/add_new_device.sh
+
 %package -n patterns-sailfish-device-adaptation-enchilada
 Summary: Jolla HW Adaptation enchilada
 Requires: droid-hal-enchilada
@@ -16,20 +19,13 @@ Requires: libhybris-libEGL
 Requires: libhybris-libGLESv2
 Requires: libhybris-libwayland-egl
 
-# Enchilada extras!
-# Requires: triambienced
-# Requires: onyx-triambience-settings-plugin
-# Requires: gestured
-# Requires: onyx-gesture-settings-plugin
-# Requires: nemo-qml-plugin-systemsettings
-
 # Sensors
 Requires: hybris-libsensorfw-qt5
 
 # FP
-# Requires: droid-biometry-fp
-# Requires: droid-fake-crypt
-# Requires: sailfish-fpd-community
+Requires: droid-biometry-fp
+Requires: droid-fake-crypt
+Requires: sailfish-fpd-community
 
 # Vibra
 Requires: ngfd-plugin-native-vibrator
@@ -40,11 +36,13 @@ Requires: qt5-plugin-generic-evdev
 
 Requires: pulseaudio-modules-droid
 Requires: pulseaudio-modules-droid-hidl
-Requires: audiosystem-passthrough
+# for audio recording to work:
+Requires: qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
+
 # The -dummy-af is needed for newer devices that run the main
 # audiosystem-passthrough in qti mode (e.g. >=Android 9 Qualcomm),
 # to fix non-responding Camera app and/or voice during a phone call:
-#Requires: audiosystem-passthrough-dummy-af
+Requires: audiosystem-passthrough-dummy-af
 
 # for audio recording to work:
 Requires: qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
@@ -54,21 +52,13 @@ Requires: qt5-qtwayland-wayland_egl
 Requires: qt5-qpa-hwcomposer-plugin
 Requires: qtscenegraph-adaptation
 
-# Add GStreamer v1.0 as standard
-Requires: gstreamer1.0
-Requires: gstreamer1.0-plugins-good
-Requires: gstreamer1.0-plugins-base
-Requires: gstreamer1.0-plugins-bad
-Requires: nemo-gstreamer1.0-interfaces
-# For devices with droidmedia and gst-droid built, see HADK pdf for more information
+# For hybris devices with droidmedia, see HADK pdf for more information
 Requires: gstreamer1.0-droid
 Requires: gstreamer1.0-libav
+Requires: gmp-droid
 
 # This is needed for notification LEDs
 Requires: mce-plugin-libhybris
-
-# Flashlight
-Requires: jolla-settings-system-flashlight
 
 # USB mode controller
 Requires: usb-moded
@@ -77,7 +67,7 @@ Requires: usb-moded
 Requires: rfkill
 
 # enable device lock and allow to select untrusted software
-Requires: jolla-devicelock-daemon-encsfa
+Requires: sailfish-devicelock-fpd
 
 # Enable home encryption
 #Requires: sailfish-device-encryption
@@ -86,12 +76,14 @@ Requires: jolla-devicelock-daemon-encsfa
 Requires: geoclue-provider-hybris
 
 # For FM radio on some QCOM devices
-Requires: qt5-qtmultimedia-plugin-mediaservice-irisradio
-Requires: jolla-mediaplayer-radio
+#Requires: qt5-qtmultimedia-plugin-mediaservice-irisradio
+#Requires: jolla-mediaplayer-radio
 
-# NFC for devices using Android 8 or newer as base
+# NFC support
+# 1. binder plugin requires Android 8 or a newer base
+# 2. pn54x plugin talks directly to pn54x driver
+# These plugins are mutually exclusive, you need to pick one:
 Requires: nfcd-binder-plugin
-Requires: jolla-settings-system-nfc
 
 # Telephony
 Requires: ofono-ril-binder-plugin
@@ -104,6 +96,7 @@ Requires: bluebinder
 
 # Browser video acceleration
 Requires: gmp-droid
+
 
 %description -n patterns-sailfish-device-adaptation-enchilada
 Pattern with packages for enchilada HW Adaptation

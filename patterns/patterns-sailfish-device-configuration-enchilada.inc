@@ -1,3 +1,6 @@
+# Feel free to disable non-critical HA parts during devel by commenting lines out
+# Generated in hadk by executing: rpm/dhd/helpers/add_new_device.sh
+
 %package -n patterns-sailfish-device-configuration-enchilada
 Summary: Jolla Configuration enchilada
 Requires: patterns-sailfish-device-configuration-common-enchilada
@@ -8,11 +11,14 @@ Requires: patterns-sailfish-cellular-apps
 
 # Early stages of porting benefit from these:
 Requires: patterns-sailfish-device-tools
+Requires: qt5-qtdeclarative-qmlscene
 
 Requires: sailfish-content-graphics-z%{icon_res}
 
+Requires: jolla-settings-system-flashlight
+
 # For multi-SIM devices
-#Requires: jolla-settings-networking-multisim
+Requires: jolla-settings-networking-multisim
 
 # For devices which support NFC
 #Requires: jolla-settings-system-nfc

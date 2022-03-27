@@ -1,6 +1,6 @@
 [Unit]
 Description=Droid mount for /vendor
-Before=vendor-bt_firmware.mount vendor-dsp.mount vendor-firmware_mnt.mount local-fs.target systemd-modules-load.service
+Before=vendor-bt_firmware.mount vendor-etc-audio-audio_policy_configuration.xml.mount vendor-etc-init-hw-init.qcom.rc.mount vendor-lib-modules-qca_cld3_wlan.ko.mount vendor-lib-modules\x2daging-qca_cld3_wlan.ko.mount vendor-lib64-hw-power.qcom.so.mount vendor-dsp.mount vendor-firmware_mnt.mount local-fs.target systemd-modules-load.service
 
 [Mount]
 What=/dev/sde16
